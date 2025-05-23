@@ -1,21 +1,21 @@
 # RAGハンズオン手順書
 
 ## 目次
-- [デモ動画](#デモ動画)
-- [概要](#概要)
-- [準備](#準備)
-- [01_grounding の手順](#01_grounding-の手順)
-  - [1. 事前準備](#1-事前準備)
-  - [2. パイプラインの作成 -> 自動Embed](#2-パイプラインの作成---自動embed)
-  - [3. Vector APIを介した手動Embed](#3-vector-apiを介した手動embed)
-  - [4. SearchAPI（とVector API）を介した関連文書の抽出](#4-searchapiとvector-apiを介した関連文書の抽出)
-  - [5. AI LaunchpadのRun Search機能からの抽出](#5-ai-launchpadのrun-search機能からの抽出)
-- [02_orchestration の手順](#02_orchestration-の手順)
-  - [デモ動画](#デモ動画-1)
-  - [1. 事前準備](#1-事前準備-1)
-  - [2. Orchestrationを作成](#2-orchestrationを作成)
-  - [3. Orchestrationをテスト実行](#3-orchestrationをテスト実行)
-  - [4. APIからOrchestrationを実行](#4-apiからorchestrationを実行)
+- [デモ動画](#デモ動画) - RAGハンズオンの全体像とワークフローを紹介する映像資料
+- [概要](#概要) - ハンズオンで実現するRAGエンドポイントの全体構成と学習内容
+- [準備](#準備) - 環境セットアップとリポジトリのクローン手順
+- [01_grounding の手順](#01_grounding-の手順) - ドキュメントグラウンディング機能の実装
+  - [1. 事前準備](#1-事前準備) - リソースグループ作成とGrounding機能の有効化
+  - [2. パイプラインの作成 -> 自動Embed](#2-パイプラインの作成---自動embed) - S3へのドキュメントアップロードと自動ベクトル化
+  - [3. Vector APIを介した手動Embed](#3-vector-apiを介した手動embed) - APIを使用したコレクション作成とテキスト埋め込み
+  - [4. SearchAPI（とVector API）を介した関連文書の抽出](#4-searchapiとvector-apiを介した関連文書の抽出) - ベクトル検索による関連コンテンツ取得
+  - [5. AI LaunchpadのRun Search機能からの抽出](#5-ai-launchpadのrun-search機能からの抽出) - UIを使った検索機能の体験
+- [02_orchestration の手順](#02_orchestration-の手順) - 複数AIコンポーネントの連携ワークフロー
+  - [デモ動画](#デモ動画-1) - Orchestration機能のワークフローを紹介する映像資料
+  - [1. 事前準備](#1-事前準備-1) - Orchestration用デプロイメントの作成
+  - [2. Orchestrationを作成](#2-orchestrationを作成) - Groundingとテンプレート、LLMを組み合わせたワークフロー設計
+  - [3. Orchestrationをテスト実行](#3-orchestrationをテスト実行) - UIからのワークフロー実行とトレース確認
+  - [4. APIからOrchestrationを実行](#4-apiからorchestrationを実行) - プログラムからのワークフロー呼び出し
 
 ## デモ動画
 以下のYouTubeリンクでハンズオンのデモをご覧いただけます：
